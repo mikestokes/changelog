@@ -4,6 +4,7 @@ const contents = JSON.stringify(changes.map(change => {
 	return {
 		title: change.title,
 		draft: change.draft,
+		tags: change.tags,
 		published: change.published,
 		publishedAgo: change.publishedAgo,
 		markdown: change.markdown

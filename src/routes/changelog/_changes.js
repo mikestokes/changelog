@@ -11,6 +11,7 @@ const changes = [
 	{
 		title: 'New Feature',
 		draft: true,
+		tags: ['new'],
 		published: dayjs().add(5, 'day'),		// can be in the future for scheduled publishing
 		publishedAgo: dayjs().add(5, 'day').fromNow(),
 		markdown: `
@@ -24,6 +25,7 @@ const changes = [
 	{
 		title: 'What is Sapper?',
 		draft: false,
+		tags: ['fix'],
 		published: dayjs().subtract(7, 'day'),		// can be in the future for scheduled publishing
 		publishedAgo: dayjs().subtract(7, 'day').fromNow(),
 		markdown: `
@@ -33,6 +35,7 @@ const changes = [
 	{
 		title: 'How to use Sapper',
 		draft: false,
+		tags: ['improvement'],
 		published: dayjs().subtract(1, 'month'),
 		publishedAgo: dayjs().subtract(1, 'month').fromNow(),
 		markdown: `
