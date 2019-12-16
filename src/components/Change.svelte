@@ -53,7 +53,7 @@
               <span
                 class="inline-block bg-green-500 hover:bg-blue-700 text-white
                 font-bold py-1 px-4 rounded-full mr-3">
-                Improvement
+                Enhancement
               </span>
             {/if}
             <p
