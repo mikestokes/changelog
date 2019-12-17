@@ -582,15 +582,10 @@ video {
   height: auto;
 }
 
-div.article-body {
-  background-color: red;
-  margin-top: 5rem;
-}
-
+/* 
 .article-body > p {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
+  @apply py-6;
+} */
 
 .container {
   width: 100%;

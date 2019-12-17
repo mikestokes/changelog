@@ -9,13 +9,13 @@ dayjs.extend(relativeTime)
 
 const changes = [
 	{
-		title: 'New Feature',
+		title: 'New Feature 👋',
 		draft: true,
 		tags: [{ title: 'new', color: 'blue' }],
 		published: dayjs().add(5, 'day'),		// can be in the future for scheduled publishing
 		publishedAgo: dayjs().add(5, 'day').fromNow(),
 		markdown: `
-			<p class="py-6">
+			<p>
 				👋 Welcome fellow <a class="text-teal-500 no-underline hover:underline" href="https://www.tailwindcss.com">Tailwind CSS</a> and miminal monochrome blog fan.  This starter template provides a starting point to create your own minimal monochrome blog using Tailwind CSS and vanilla Javascript.
 			</p>
 

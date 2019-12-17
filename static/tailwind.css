@@ -1,14 +1,8 @@
 @tailwind base;
-
-div.article-body {
-  background-color: red;
-  @apply mt-20;
-}
-
+/* 
 .article-body > p {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
+  @apply py-6;
+} */
 
 @tailwind components;
 

@@ -11,7 +11,7 @@
     class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal"
     style="font-family:Georgia,serif;">
 
-    <header class="font-sans">
+    <header class="font-sans pb-6">
       <!-- <span class="text-base md:text-sm text-teal-500 font-bold"> -->
       <!-- &lt; -->
       <!-- <span> -->
@@ -27,7 +27,7 @@
           itemprop="headline"
           class="inline-block font-bold font-sans break-normal text-gray-900
           text-3xl md:text-4xl mr-3">
-          {change.title}
+          {@html change.title}
         </h1>
         {#if change.draft}
           <p class="inline-block font-normal text-gray-400">(Draft)</p>
