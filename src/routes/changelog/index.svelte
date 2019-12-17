@@ -1,4 +1,10 @@
-<script context="module">
+<script>
+  import { onMount } from "svelte";
+  import { goto } from "@sapper/app";
+  onMount(() => goto("/"));
+</script>
+
+<!-- <script context="module">
 	export async function preload({ params, query }) {
 		// the `slug` parameter is available because
 		// this file is called [slug].svelte
@@ -11,13 +17,9 @@
 			this.error(res.status, data.message);
 		}
 	}
-</script>
-
-<script>
+</script><script>
 	export let change;
-</script>
-
-<svelte:head>
+</script><svelte:head>
 	<title>{change.title}</title>
 </svelte:head>
 
@@ -25,4 +27,4 @@
 
 <div class='content'>
 	{@html change.markdown}
-</div>
+</div> -->

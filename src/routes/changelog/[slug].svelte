@@ -1,23 +1,26 @@
 <script context="module">
-	export function preload({ params, query }) {
-		return this.fetch(`changelog.json`).then(r => r.json()).then(changes => {
-			return { changes };
-		});
-	}
+  export function preload({ params, query }) {
+    // changelog.json is /changelog/index.json.js
+    return this.fetch(`changelog.json`)
+      .then(r => r.json())
+      .then(changes => {
+        return { changes };
+      });
+  }
 </script>
 
 <script>
-	import Change from '../../components/Change.svelte';
-	
-	export let changes;
+  import Change from "../../components/Change.svelte";
+
+  export let changes;
 </script>
 
 <svelte:head>
-	<title>Change Log</title>
+  <title>Change Log</title>
 </svelte:head>
 
 <section>
-	{#each changes as change}
-		<Change change={change}/>
-	{/each}
+  {#each changes as change}
+    <Change {change} />
+  {/each}
 </section>
