@@ -13,59 +13,59 @@
 
     <!--Title-->
     <header class="font-sans">
-      <span class="text-base md:text-sm text-teal-500 font-bold">
-        &lt;
-        <span>
-          <a
+      <!-- <span class="text-base md:text-sm text-teal-500 font-bold"> -->
+      <!-- &lt; -->
+      <!-- <span> -->
+      <!-- <a
             href
             class="text-base md:text-sm text-teal-500 font-bold no-underline
             hover:underline">
             BACK TO BLOG
-          </a>
+          </a> -->
 
-          <div class="pt-6 pb-2">
-            <h1
-              itemprop="headline"
-              class="inline-block font-bold font-sans break-normal text-gray-900
-              text-3xl md:text-4xl mr-3">
-              {change.title}
-            </h1>
-            {#if change.draft}
-              <p class="inline-block font-normal text-gray-400">(Draft)</p>
-            {/if}
-          </div>
-          <div>
-            {#if change.tags.includes('new')}
-              <span
-                class="inline-block bg-blue-500 hover:bg-blue-700 text-white
-                font-bold py-1 px-4 rounded-full mr-3">
-                New
-              </span>
-            {/if}
-            {#if change.tags.includes('fix')}
-              <span
-                class="inline-block bg-yellow-500 hover:bg-blue-700 text-white
-                font-bold py-1 px-4 rounded-full mr-3">
-                Fix
-              </span>
-            {/if}
-            {#if change.tags.includes('improvement')}
-              <span
-                class="inline-block bg-green-500 hover:bg-blue-700 text-white
-                font-bold py-1 px-4 rounded-full mr-3">
-                Enhancement
-              </span>
-            {/if}
-            <p
-              class="inline-block text-sm md:text-base font-normal text-gray-500
-              pt-1">
-              <time itemprop="datePublished" datetime={change.published}>
-                {change.publishedAgo}
-              </time>
-            </p>
-          </div>
-        </span>
-      </span>
+      <div class="pt-6 pb-2">
+        <h1
+          itemprop="headline"
+          class="inline-block font-bold font-sans break-normal text-gray-900
+          text-3xl md:text-4xl mr-3">
+          {change.title}
+        </h1>
+        {#if change.draft}
+          <p class="inline-block font-normal text-gray-400">(Draft)</p>
+        {/if}
+      </div>
+      <div>
+        {#if change.tags.includes('new')}
+          <span
+            class="inline-block bg-blue-500 hover:bg-blue-700 text-white
+            text-base md:text-sm font-bold py-0.5 px-3 rounded-full mr-2">
+            New
+          </span>
+        {/if}
+        {#if change.tags.includes('fix')}
+          <span
+            class="inline-block bg-pink-500 hover:bg-pink-700 text-white
+            text-base md:text-sm font-bold py-0.5 px-3 rounded-full mr-2">
+            Fix
+          </span>
+        {/if}
+        {#if change.tags.includes('improvement')}
+          <span
+            class="inline-block bg-green-500 hover:bg-green-700 text-white
+            text-base md:text-sm font-bold py-0.5 px-3 rounded-full mr-2">
+            Enhancement
+          </span>
+        {/if}
+        <p
+          class="inline-block text-sm md:text-base font-normal text-gray-500
+          pt-1">
+          <time itemprop="datePublished" datetime={change.published}>
+            {change.publishedAgo}
+          </time>
+        </p>
+      </div>
+      <!-- </span> -->
+      <!-- </span> -->
     </header>
 
     <!--Post Content-->
