@@ -11,7 +11,7 @@ const changes = [
 	{
 		title: 'New Feature',
 		draft: true,
-		tags: ['new'],
+		tags: [{ title: 'new', color: 'blue' }],
 		published: dayjs().add(5, 'day'),		// can be in the future for scheduled publishing
 		publishedAgo: dayjs().add(5, 'day').fromNow(),
 		markdown: `
@@ -25,7 +25,7 @@ const changes = [
 	{
 		title: 'What is Sapper?',
 		draft: false,
-		tags: ['fix'],
+		tags: [{ title: 'fix', color: 'pink' }, { title: 'beta', color: 'green' }],
 		published: dayjs().subtract(7, 'day'),		// can be in the future for scheduled publishing
 		publishedAgo: dayjs().subtract(7, 'day').fromNow(),
 		markdown: `
@@ -35,7 +35,7 @@ const changes = [
 	{
 		title: 'How to use Sapper',
 		draft: false,
-		tags: ['improvement'],
+		tags: [{ title: 'improvement', color: 'purple' }],
 		published: dayjs().subtract(1, 'month'),
 		publishedAgo: dayjs().subtract(1, 'month').fromNow(),
 		markdown: `

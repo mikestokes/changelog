@@ -11,7 +11,6 @@
     class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal"
     style="font-family:Georgia,serif;">
 
-    <!--Title-->
     <header class="font-sans">
       <!-- <span class="text-base md:text-sm text-teal-500 font-bold"> -->
       <!-- &lt; -->
@@ -35,27 +34,13 @@
         {/if}
       </div>
       <div>
-        {#if change.tags.includes('new')}
+        {#each change.tags as tag}
           <span
-            class="inline-block bg-blue-500 hover:bg-blue-700 text-white
-            text-base md:text-sm font-bold py-0.5 px-3 rounded-full mr-2">
-            New
+            class="inline-block hover:bg-blue-700 text-white text-base
+            md:text-sm font-bold py-0.5 px-3 rounded-full mr-2 {'bg-' + tag.color + '-500'}">
+            {tag.title}
           </span>
-        {/if}
-        {#if change.tags.includes('fix')}
-          <span
-            class="inline-block bg-pink-500 hover:bg-pink-700 text-white
-            text-base md:text-sm font-bold py-0.5 px-3 rounded-full mr-2">
-            Fix
-          </span>
-        {/if}
-        {#if change.tags.includes('improvement')}
-          <span
-            class="inline-block bg-green-500 hover:bg-green-700 text-white
-            text-base md:text-sm font-bold py-0.5 px-3 rounded-full mr-2">
-            Enhancement
-          </span>
-        {/if}
+        {/each}
         <p
           class="inline-block text-sm md:text-base font-normal text-gray-500
           pt-1">
@@ -68,18 +53,8 @@
       <!-- </span> -->
     </header>
 
-    <!--Post Content-->
     <div itemprop="articleBody" class="article-body">
       {@html change.markdown}
     </div>
-
-    <!--Lead Para-->
-    <!-- <p class="py-6">
-            👋 Welcome fellow <a class="text-teal-500 no-underline hover:underline" href="https://www.tailwindcss.com">Tailwind CSS</a> and miminal monochrome blog fan.  This starter template provides a starting point to create your own minimal monochrome blog using Tailwind CSS and vanilla Javascript.
-        </p>
-
-        <p class="py-6">The basic blog page layout is available and all using the default Tailwind CSS classes (although there are a few hardcoded style tags). If you are going to use this in your project, you will want to convert the classes into components.</p>				 -->
-
   </div>
-
 </article>
