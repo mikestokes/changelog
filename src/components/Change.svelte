@@ -53,7 +53,7 @@
       <!-- </span> -->
     </header>
 
-    <div itemprop="articleBody" class="article-body">
+    <div itemprop="articleBody" class="article-body font-sans">
       {@html change.markdown}
     </div>
   </div>
