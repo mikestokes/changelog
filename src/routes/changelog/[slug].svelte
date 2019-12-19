@@ -19,7 +19,7 @@
   <title>Change Log</title>
 </svelte:head>
 
-<section>
+<section class="pt-20">
   {#each changes as change}
     <Change {change} />
   {/each}

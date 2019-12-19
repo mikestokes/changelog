@@ -4,6 +4,14 @@
   @apply py-6;
 } */
 
+.article-body p {
+  @apply pb-6;
+}
+
+.article-body hr {
+  @apply pb-6;
+}
+
 @tailwind components;
 
 @tailwind utilities;

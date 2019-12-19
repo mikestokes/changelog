@@ -587,6 +587,14 @@ video {
   @apply py-6;
 } */
 
+.article-body p {
+  padding-bottom: 1.5rem;
+}
+
+.article-body hr {
+  padding-bottom: 1.5rem;
+}
+
 .container {
   width: 100%;
 }
