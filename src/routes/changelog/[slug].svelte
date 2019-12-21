@@ -7,7 +7,7 @@
 		const data = await res.json();
 
 		if (res.status === 200) {
-			return { changes: data };
+			return { log: data };
 		} else {
 			this.error(res.status, data.message);
 		}
@@ -16,16 +16,19 @@
 
 <script>
   import Change from "../../components/Change.svelte";
+  import Back from "../../components/Back.svelte";
 
-  export let changes;
+  export let log;
 </script>
 
 <svelte:head>
-  <title>Change Log</title>
+  <title>{log.title}</title>
 </svelte:head>
 
 <section class="pt-20">
-  {#each changes as change}
+  <Back {log} />
+
+  {#each log.changes as change}
     <Change {change} />
   {/each}
 </section>

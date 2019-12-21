@@ -1,10 +1,6 @@
-import changes from './_changes.js';
+import log from './_log.js';
 
-const contents = JSON.stringify(changes.map(change => {
-	return {
-		...change
-	};
-}));
+const contents = JSON.stringify(log)
 
 export function get(req, res) {
 	res.writeHead(200, {

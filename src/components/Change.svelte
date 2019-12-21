@@ -5,11 +5,11 @@
 <article
   itemscope
   itemtype="https://schema.org/BlogPosting"
-  class="container w-full md:max-w-3xl mx-auto pb-10">
+  class="container w-full md:max-w-3xl mx-auto pb-8">
 
   <div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
 
-    <header class="font-sans pb-6">
+    <div class="font-sans pb-6">
       <!-- <span class="text-base md:text-sm text-teal-500 font-bold"> -->
       <!-- &lt; -->
       <!-- <span> -->
@@ -20,7 +20,7 @@
             BACK TO BLOG
           </a> -->
 
-      <div class="pt-6 pb-2">
+      <header class="pb-2">
         <h1
           itemprop="headline"
           class="inline-block font-bold font-sans break-normal text-gray-900
@@ -30,7 +30,7 @@
         {#if change.draft}
           <p class="inline-block font-normal text-gray-400">(Draft)</p>
         {/if}
-      </div>
+      </header>
       <div>
         {#each change.tags as tag}
           <span
@@ -49,7 +49,7 @@
       </div>
       <!-- </span> -->
       <!-- </span> -->
-    </header>
+    </div>
 
     <div itemprop="articleBody" class="article-body font-sans">
       {@html change.markdown}

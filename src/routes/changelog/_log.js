@@ -48,4 +48,11 @@ changes.forEach(change => {
 	change.markdown = change.markdown.replace(/^\t{3}/gm, '');
 });
 
-export default changes;
+export default {
+	id: '123',
+	title: 'Jiffy Changelog',
+	website: {
+		uri: 'https://jiffy.page'
+	},
+	changes
+};
