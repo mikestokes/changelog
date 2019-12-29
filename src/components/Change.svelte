@@ -10,15 +10,6 @@
   <div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
 
     <div class="font-sans pb-6">
-      <!-- <span class="text-base md:text-sm text-teal-500 font-bold"> -->
-      <!-- &lt; -->
-      <!-- <span> -->
-      <!-- <a
-            href
-            class="text-base md:text-sm text-teal-500 font-bold no-underline
-            hover:underline">
-            BACK TO BLOG
-          </a> -->
 
       <header class="pb-2">
         <h1
@@ -47,8 +38,6 @@
           </time>
         </p>
       </div>
-      <!-- </span> -->
-      <!-- </span> -->
     </div>
 
     <div itemprop="articleBody" class="article-body font-sans">
