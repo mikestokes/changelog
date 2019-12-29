@@ -1,5 +1,14 @@
 <script>
+  import dayjs from 'dayjs';
+  import relativeTime from 'dayjs/plugin/relativeTime';
+
+  dayjs.extend(relativeTime);
+
   export let entry;
+
+  $: publishedDateTime = dayjs.unix(entry.published._seconds);
+  $: publishedAgo = dayjs.unix(entry.published._seconds).fromNow();
+  
 </script>
 
 <article
@@ -8,7 +17,6 @@
   class="container w-full md:max-w-3xl mx-auto pb-8">
 
   <div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
-
     <div class="font-sans pb-6">
 
       <header class="pb-2">
@@ -25,23 +33,23 @@
       <div>
         {#each entry.tags as tag}
           <span
-            class="inline-block hover:bg-blue-700 text-white text-base
+            class="inline-block hover:{'bg-' + tag.color + '-700'} text-white text-base
             md:text-sm font-bold py-0.5 px-3 rounded-full mr-2 {'bg-' + tag.color + '-500'}">
-            {tag.title}
+            {tag.name}
           </span>
         {/each}
         <p
           class="inline-block text-sm md:text-base font-normal text-gray-500
           pt-1">
-          <time itemprop="datePublished" datetime={entry.published}>
-            {entry.publishedAgo}
+          <time itemprop="datePublished" datetime={publishedDateTime}>
+            {publishedAgo}
           </time>
         </p>
       </div>
     </div>
 
     <div itemprop="articleBody" class="article-body font-sans">
-      {@html entry.markdown}
+      {@html entry.content}
     </div>
 
     <hr class="mt-4" />

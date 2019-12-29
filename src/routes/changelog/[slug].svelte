@@ -1,12 +1,9 @@
 <script context="module">
   export async function preload({ params, query }) {
-    // the `slug` parameter is available because
-    // this file is called [slug].svelte
-    // the fetch path starts at root
 		const res = await this.fetch(`./changelog/${params.slug}.json`);
 		const data = await res.json();
 
-		if (res.status === 200) {
+    if (res.status === 200) {
 			return { log: data };
 		} else {
 			this.error(res.status, data.message);
