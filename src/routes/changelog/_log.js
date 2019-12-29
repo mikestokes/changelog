@@ -7,7 +7,7 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 
 dayjs.extend(relativeTime)
 
-const changes = [
+const entries = [
 	{
 		title: 'New Feature 👋',
 		draft: true,
@@ -44,15 +44,13 @@ const changes = [
 	}
 ];
 
-changes.forEach(change => {
-	change.markdown = change.markdown.replace(/^\t{3}/gm, '');
+entries.forEach(entry => {
+	entry.markdown = entry.markdown.replace(/^\t{3}/gm, '');
 });
 
 export default {
 	id: '123',
 	title: 'Jiffy Changelog',
-	website: {
-		uri: 'https://jiffy.page'
-	},
-	changes
+	website: 'https://jiffy.page',
+	entries
 };

@@ -28,7 +28,7 @@
 <section class="pt-20">
   <Back {log} />
 
-  {#each log.changes as change}
-    <Change {change} />
+  {#each log.entries as entry}
+    <Change {entry} />
   {/each}
 </section>
