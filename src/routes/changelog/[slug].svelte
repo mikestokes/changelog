@@ -15,7 +15,7 @@
 </script>
 
 <script>
-  import Change from "../../components/Change.svelte";
+  import Entry from "../../components/Entry.svelte";
   import Back from "../../components/Back.svelte";
 
   export let log;
@@ -29,6 +29,6 @@
   <Back {log} />
 
   {#each log.entries as entry}
-    <Change {entry} />
+    <Entry {entry} />
   {/each}
 </section>
