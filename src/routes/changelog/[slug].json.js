@@ -1,17 +1,11 @@
-import * as admin from 'firebase-admin';
-import serviceAccount from '../_helpers/service-account.js';
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://productlogdotdev.firebaseio.com'
-});
-
-let db = admin.firestore();
+import { db } from '../_helpers/firebase';
 
 export async function get(req, res) {
 	// the `slug` parameter is available because this file
 	// is called [slug].json.js
 	const { slug } = req.params;
+
+	// TODO: completely fails with no internet connection... timesout then 500s
 
 	db.collection('logs').doc(slug).get()
 		.then(doc => {
@@ -29,7 +23,7 @@ export async function get(req, res) {
 			}
 		})
 		.catch(err => {
-			console.error(err);
+			console.error('error', err);
 			res.end();
 		})
 }

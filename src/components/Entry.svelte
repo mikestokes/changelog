@@ -2,9 +2,9 @@
   import dayjs from 'dayjs';
   import relativeTime from 'dayjs/plugin/relativeTime';
 
-  dayjs.extend(relativeTime);
-
   export let entry;
+
+  dayjs.extend(relativeTime);
 
   $: publishedDateTime = dayjs.unix(entry.published._seconds);
   $: publishedAgo = dayjs.unix(entry.published._seconds).fromNow();
