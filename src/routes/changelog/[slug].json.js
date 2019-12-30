@@ -6,7 +6,6 @@ import send from '@polka/send-type';
 // from Sapper in prerender.
 // https://github.com/codediodeio/sveltefire/issues/4
 
-
 export async function get(req, res) {
 	// the `slug` parameter is available because this file
 	// is called [slug].json.js
