@@ -1,4 +1,11 @@
-import { db } from '../_helpers/firebase';
+import { db } from '../_helpers/firebase-admin';
+import send from '@polka/send-type';
+
+// Abstract the API layer into node functions so preload can call them from 
+// the server of client. Firebase currently has problems when being used
+// from Sapper in prerender.
+// https://github.com/codediodeio/sveltefire/issues/4
+
 
 export async function get(req, res) {
 	// the `slug` parameter is available because this file
@@ -11,12 +18,7 @@ export async function get(req, res) {
 		.then(doc => {
 			if (!doc.exists) {
 				console.info(`No such change log: ${slug}`);
-				
-				res.writeHead(302, {
-					Location: 'https://jiffy.page',
-				});
-
-				res.end();
+				return send(res, 404, {});
 			} else {
 				res.setHeader('Content-Type', 'application/json');
 				res.end(JSON.stringify(doc.data()));

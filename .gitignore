@@ -5,3 +5,5 @@ yarn-error.log
 /cypress/screenshots/
 /__sapper__/
 service-account.js
+firebaseConfig.js
+firebase.js
