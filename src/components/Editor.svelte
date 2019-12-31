@@ -1,14 +1,35 @@
 <script>
-	// export let segment;
+  import { fade } from 'svelte/transition';
+	import { user, editing } from '../store';
+	
+	function deleteClick() {
+    // editing.set({...$editing, id: null});
+	}
+
+	function cancelClick() {
+    editing.set({...$editing, id: null});
+	}
+
+	function saveClick() {
+    // editing.set({...$editing, id: null});
+	}
 </script>
 
-<aside>
-	<!-- <ul>
-		<li><a class:selected='{segment === undefined}' href='.'>home</a></li>
-		<li><a class:selected='{segment === "about"}' href='about'>about</a></li> -->
+<aside in:fade out:fade class:invisible={!Number.isInteger($editing.id)} class="overflow-hidden fixed h-full z-10 shadow-lg bg-white p-4 w-full md:w-1/2">
+		<!-- <div> -->
 
-		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-		<!-- <li><a rel=prefetch class:selected='{segment === "blog"}' href='blog'>blog</a></li>
-	</ul> -->
+			EDITOR
+		<!-- </div> -->
+	<div class="flex">
+		<button on:click={deleteClick} class="flex-initial bg-transparent border border-gray-500 text-base text-sm text-gray-500 py-1 px-4 rounded-full">
+			Delete
+		</button>
+		<button on:click={cancelClick} class="flex-initial bg-transparent border border-gray-500 text-base text-sm text-gray-500 py-1 px-4 rounded-full">
+			Cancel
+		</button>
+		<div class="flex-grow"></div>
+		<button on:click={saveClick} class="flex-initial bg-transparent border border-gray-500 text-base text-sm text-gray-500 py-1 px-4 rounded-full">
+			Save
+		</button>
+	</div>
 </aside>

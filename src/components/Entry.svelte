@@ -1,6 +1,7 @@
 <script>
   import dayjs from 'dayjs';
   import relativeTime from 'dayjs/plugin/relativeTime';
+  import { user, editing } from '../store';
 
   export let entry;
 
@@ -9,6 +10,9 @@
   $: publishedDateTime = dayjs.unix(entry.published._seconds);
   $: publishedAgo = dayjs.unix(entry.published._seconds).fromNow();
   
+  function editClick() {
+    editing.set({...$editing, id: entry.id});
+  }
 </script>
 
 <article
@@ -19,28 +23,32 @@
   <div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal">
     <div class="font-sans pb-6">
 
-      <header class="pb-2">
+      <header class="pb-2 flex">
         <h1
           itemprop="headline"
-          class="inline-block font-bold font-sans break-normal text-gray-900
+          class="flex-initial font-bold font-sans break-normal text-gray-900
           text-3xl md:text-4xl mr-3">
           {@html entry.title}
         </h1>
         {#if entry.draft}
-          <p class="inline-block font-normal text-gray-400">(Draft)</p>
+          <p class="flex-initial font-normal text-gray-400">(Draft)</p>
+        {/if}
+        <div class="flex-grow"></div>
+        {#if $user.loggedIn}
+          <button on:click={editClick} class="flex-initial bg-transparent border border-gray-500 text-base text-sm text-gray-500 py-1 px-4 rounded-full">
+            Edit
+          </button>
         {/if}
       </header>
-      <div>
+      <div class="flex">
         {#each entry.tags as tag}
-          <span
-            class="inline-block hover:{'bg-' + tag.color + '-700'} text-white text-base
+          <div
+            class="flex-initial hover:{'bg-' + tag.color + '-700'} text-white text-base
             md:text-sm font-bold py-0.5 px-3 rounded-full mr-2 {'bg-' + tag.color + '-500'}">
             {tag.name}
-          </span>
+          </div>
         {/each}
-        <p
-          class="inline-block text-sm md:text-base font-normal text-gray-500
-          pt-1">
+        <p class="flex-initial text-sm md:text-base font-normal text-gray-500">
           <time itemprop="datePublished" datetime={publishedDateTime}>
             {publishedAgo}
           </time>

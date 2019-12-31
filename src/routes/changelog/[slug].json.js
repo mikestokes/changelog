@@ -19,8 +19,17 @@ export async function get(req, res) {
 				console.info(`No such change log: ${slug}`);
 				return send(res, 404, {});
 			} else {
+				let data = doc.data()
+
+				data.entries = data.entries.map((entry, index) => {
+					return {
+						id: index,
+						...entry
+					}
+				})
+
 				res.setHeader('Content-Type', 'application/json');
-				res.end(JSON.stringify(doc.data()));
+				res.end(JSON.stringify(data));
 			}
 		})
 		.catch(err => {
