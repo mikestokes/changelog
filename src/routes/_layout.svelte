@@ -1,6 +1,6 @@
 <script>
 	import Nav from '../components/Nav.svelte';
-	import Editor from '../components/Editor.svelte';
+	import LogEntryEditor from '../components/LogEntryEditor.svelte';
 
 	export let segment;
 </script>
@@ -8,6 +8,6 @@
 <Nav {segment}/>
 
 <main>
-	<Editor></Editor>
+	<LogEntryEditor></LogEntryEditor>
 	<slot></slot>
 </main>

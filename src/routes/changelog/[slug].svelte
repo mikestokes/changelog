@@ -19,8 +19,7 @@
 <!-- [slug] component -->
 
 <script>
-  import Entry from "../../components/Entry.svelte";
-  import Back from "../../components/Back.svelte";
+  import LogEntry from "../../components/LogEntry.svelte";
 
   export let log;
 </script>
@@ -30,9 +29,7 @@
 </svelte:head>
 
 <section class="pt-20">
-  <Back {log} />
-
   {#each log.entries as entry}
-    <Entry {entry} />
+    <LogEntry {entry} />
   {/each}
 </section>
